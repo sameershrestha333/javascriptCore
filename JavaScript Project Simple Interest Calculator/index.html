@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Simple Interest Calculator</title>
+    <script type="text/javascript">
+    function calculate() {
+      var p=0;
+      var n=0;
+      var r=0;
+      var SI=0;
+      try {
+        p= parseInt(document.getElementById('principal').value);
+        n = parseInt(document.getElementById('years').value);
+        r = parseInt(document.getElementById('rate').value);
+        SI = (p * n * r)/100;
+        document.getElementById('res').innerHTML=SI;
+        //alert(p);
+      } catch (e) {
+          alert("Invalid enter of data.");
+      } finally {
+
+      }
+
+    };
+
+
+    </script>
+  </head>
+  <body>
+      <div class="container">
+          <div class="jumbotron">
+              <h1>Simple Interest Calculator</h1>
+              <p>Now calculating interest is simple</p>
+          </div>
+      </div>
+      <div class="container">
+        <div class="row-fluid">
+          <div class="col-md-offset-4 col-md-3">
+            <div class="form-group">
+              <label for="number">Principal Amount :</label>
+              <input type="text" class="form-control" id="principal" placeholder="Enter principal amount">
+              <br>
+
+              <label for="years">Number of Years :</label>
+              <input type="text" class="form-control" id="years" placeholder="Enter Number of Years">
+              <br>
+
+              <label for="rate">Rate of Interest :</label>
+              <input type="text" class="form-control" id="rate" placeholder="Enter rate of interest">
+              <br>
+
+              <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+              <br>
+              <h1><span class="label label-default" id="res">$</span></h1>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
